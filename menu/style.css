@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.title {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.title h1 {
+    background-color: transparent;
+    color: #fff;
+    font-size: 42px;
+    z-index: 10;
+}
+
+section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+section ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+section ul li {
+    list-style: none;
+    margin: 5px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    background: #788589;
+    color: #fff;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+section ul li:hover {
+    background: transparent;
+    color: #000;
+    border: 2px solid #626e72;
+}
+
+section ul li.active {
+    background-color: #626e72;
+    border: 2px solid transparent;
+    color: #fff;
+    transition: .4s;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product .itemBox {
+    position: relative;
+    width: 250px;
+    height: auto;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product .itemBox.hide {
+    display: none;
+}
+
+.product .itemBox h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product .itemBox p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}

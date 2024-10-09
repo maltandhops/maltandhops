@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: url("bg3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    transition: opacity 0.5s ease; /* Aggiungi la transizione per la dissolvenza */
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+.home > * {
+    position: relative;
+    z-index: 2;
+}
+
+.home h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    line-height: 1;
+    width: 60%;
+}
+
+.home a {
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    padding: 13px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 3px;
+    transition: 0.4s ease;
+}
+
+.home a:hover{
+    background-color: #e3e1e1;
+}
+
+/* Stile per la navbar */
+.navbar {
+    background-color: #626e72; /* Colore di sfondo della navbar */
+    padding: 10px 20px;
+    position: relative; /* Posizione iniziale */
+    width: 100%;
+    z-index: 1000; /* Assicurati che la navbar sia sopra gli altri contenuti */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Posiziona gli elementi in una singola riga */
+    justify-content: center; /* Centra i link nella navbar */
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+    margin-right: 0; /* Rimuovi il margine destro dall'ultimo elemento */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #788589; /* Effetto hover sui link, colore usato in precedenza: #91af68 */ 
+    border-radius: 4px;
+}
+
+/* Stile per navbar fissa */
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #626e72; /* Colore di sfondo della navbar fissa */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra quando la navbar diventa fissa */
+}
+
+.chisiamo {
+    height: fit-content;
+    width: 100%;
+    background-color: #fff;
+}
+
+.title {
+    height: fit-content;
+    width: 100%;
+    color: #2f5316;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.title h1 {
+    font-size: 52px;
+}
+
+.chisiamo .content {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    padding: 50px 0 100px 0;
+}
+
+.chisiamo .content p {
+    width: 70%;
+}
+
+.servizi {
+    height: fit-content;
+    width: 100%;
+    background-color: #788589;
+}
+
+.servizi .title {
+    color: #fff;;
+}
+
+.servizi .content {
+    height: fit-content;
+    width: 100%;
+    padding: 35px 0 100px 0;
+    flex-wrap: wrap;
+}
+
+.servizi .content .s {
+    height: 600px;
+    width: 350px;
+    background-color: #fff;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.servizi .content, .s .titoloS, .s .testoS, .s .ctaS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s .immagineS {
+    height: 58%;
+    width: 100%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+#servizio1 .immagineS {
+    background-image: url("./bg.jpg");
+}
+
+#servizio2 .immagineS {
+    background-image: url("./bg2.jpg");
+}
+
+#servizio3 .immagineS {
+    background-image: url("./bg4.jpg");
+}
+
+.s .titoloS {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    color: #788589;
+    padding-top: 15px;
+}
+
+.s .testoS {
+    height: 17%;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    padding: 0 10px;
+}
+
+.s .ctaS {
+    height: 15%;
+    width: 100%;
+}
+
+.s .ctaS a {
+    background-color: #788589;
+    text-decoration: none;
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 3px;
+    transition: 0.4s ease;
+}
+
+.s .ctaS a:hover{
+    opacity: 0.9;
+}
+
+.faqs {
+    height: fit-content;
+    width: 100%;
+    background-color: #fff;
+}
+
+.faqs .content {
+    height: fit-content;
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 75%;
+    margin: auto;
+    padding: 35px 0 100px 0;
+}
+
+.accordion {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.accordion i {
+    font-size: 1.6rem;
+}
+
+.active, .accordion:hover {
+    background-color: #f1f7f5;
+}
+
+.pannel {
+    padding: 0 2rem 2.5rem 2rem;
+    background-color: white;
+    overflow: hidden;
+    background-color: #f1f7f5;
+    display: none;
+}
+
+.pannel p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.faq {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.faq.active {
+    border: none;
+}
+
+.contatti {
+    height: fit-content;
+    width: 100%;
+    background-color: #788589;
+}
+
+.contatti .title {
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px; /* Increased max-width for better spacing */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 0 100px 0;
+}
+
+.info {
+    padding: 0 50px;
+    flex: 1;
+}
+
+.intro-text {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item .icon {
+    font-size: 24px;
+    color: #fff;
+}
+
+.info-item .text {
+    font-size: 18px;
+    color: #fff;
+}
+
+.map iframe {
+    border-radius: 8px;
+}
