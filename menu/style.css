@@ -103,6 +103,17 @@ section ul li.active {
     text-align: center;
 }
 
+.product .itemBox .prezziInFila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product .itemBox .prezziInFila > div {
+    width: fit-content;
+    text-align: left;
+}
+
 .product .itemBox.hide {
     display: none;
 }
@@ -115,4 +126,16 @@ section ul li.active {
 .product .itemBox p {
     font-size: 16px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 2rem;
+    }
 }
