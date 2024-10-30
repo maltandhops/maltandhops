@@ -11,6 +11,152 @@ body {
     background-color: #000;
 }
 
+nav {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    height: fit-content;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #788589;
+    transition: 0.5s ease;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+nav.scrolled {
+    padding: 0;
+}
+
+label.logo a {
+    color: #fff;
+    font-size: 25px;
+    line-height: 80px;
+    margin-left: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+label.logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #20657d;
+    transition: .5s;
+}
+
+label.logo a:hover {
+    background-color: transparent;
+    transition: 0s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Media Queries per la Sezione Navbar */
+@media screen and (max-width: 1055px) {
+    label.logo a {
+        font-size: 20px;
+    }
+    nav ul li a {
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: fit-content;
+        height: fit-content;
+        padding: 0px 40px;
+        border-radius: 10px;
+        background-color: #788589;
+        top: 110px;
+        right: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover, a.active {
+        background: none;
+        color: white;
+    }
+    #check:checked ~ ul {
+        right: 0%;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    label.logo a {
+        font-size: 17px;
+    }
+}
+
+@media screen and  (max-width: 386px) {
+    label.logo a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    label.logo a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    label.logo a {
+        font-size: 13px;
+    }
+}
+
 .home {
     position: relative;
     width: 100%;
@@ -68,54 +214,47 @@ body {
     background-color: #e3e1e1;
 }
 
-/* Stile per la navbar */
-.navbar {
-    background-color: #626e72; /* Colore di sfondo della navbar */
-    padding: 10px 20px;
-    position: relative; /* Posizione iniziale */
-    width: 100%;
-    z-index: 1000; /* Assicurati che la navbar sia sopra gli altri contenuti */
+/* Media Queries per la Sezione Home */
+@media screen and (max-width: 1200px) {
+    .home h1 {
+        font-size: 48px; /* Riduci la dimensione del testo */
+        width: 70%; /* Aumenta la larghezza per schermi più piccoli */
+    }
 }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Posiziona gli elementi in una singola riga */
-    justify-content: center; /* Centra i link nella navbar */
-    align-items: center;
+@media screen and (max-width: 992px) {
+    .home h1 {
+        font-size: 40px; /* Ulteriore riduzione */
+        width: 80%; /* Aumenta la larghezza per schermi più piccoli */
+    }
 }
 
-.navbar ul li {
-    margin-right: 20px;
+@media screen and (max-width: 768px) {
+    .home {
+        height: 80vh; /* Riduci l'altezza per schermi più piccoli */
+    }
+    .home h1 {
+        font-size: 32px; /* Ulteriore riduzione della dimensione del testo */
+        width: 90%; /* Maggiore larghezza */
+    }
+    .home a {
+        padding: 10px 15px; /* Riduci il padding per i pulsanti */
+        font-size: 16px; /* Riduci la dimensione del testo del pulsante */
+    }
 }
 
-.navbar ul li:last-child {
-    margin-right: 0; /* Rimuovi il margine destro dall'ultimo elemento */
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    display: block;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-    background-color: #788589; /* Effetto hover sui link, colore usato in precedenza: #91af68 */ 
-    border-radius: 4px;
-}
-
-/* Stile per navbar fissa */
-.navbar.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #626e72; /* Colore di sfondo della navbar fissa */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra quando la navbar diventa fissa */
+@media screen and (max-width: 480px) {
+    .home {
+        height: 70vh; /* Ulteriore riduzione dell'altezza */
+    }
+    .home h1 {
+        font-size: 28px; /* Ulteriore riduzione della dimensione del testo */
+        width: 95%; /* Massima larghezza per schermi piccoli */
+    }
+    .home a {
+        padding: 8px 12px; /* Ulteriore riduzione del padding */
+        font-size: 14px; /* Riduci la dimensione del testo del pulsante */
+    }
 }
 
 .chisiamo {
@@ -150,6 +289,43 @@ body {
 
 .chisiamo .content p {
     width: 70%;
+}
+
+/* Media Queries per la Sezione Chisiamo */
+@media screen and (max-width: 1200px) {
+    .title h1 {
+        font-size: 48px; /* Riduci la dimensione del testo */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .title h1 {
+        font-size: 40px; /* Ulteriore riduzione della dimensione del testo */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title h1 {
+        font-size: 32px; /* Ulteriore riduzione per schermi più piccoli */
+    }
+    .chisiamo .content {
+        padding: 30px 20px; /* Riduci il padding per schermi più piccoli */
+        flex-direction: column; /* Cambia la direzione per un layout verticale */
+    }
+    .chisiamo .content p {
+        width: 90%; /* Maggiore larghezza per il testo */
+        font-size: 18px; /* Riduci la dimensione del testo */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title h1 {
+        font-size: 28px; /* Ulteriore riduzione della dimensione del testo */
+    }
+    .chisiamo .content p {
+        width: 95%; /* Massima larghezza per schermi piccoli */
+        font-size: 16px; /* Ulteriore riduzione della dimensione del testo */
+    }
 }
 
 .servizi {
@@ -307,60 +483,172 @@ body {
     border: none;
 }
 
+/* Media Queries per la Sezione FAQs */
+@media screen and (max-width: 1200px) {
+    .faqs .content {
+        padding: 20px 10px; /* Riduci il padding per schermi più piccoli */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .faqs .content {
+        padding: 15px 5px; /* Ulteriore riduzione del padding */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .faqs .content {
+        padding: 10px; /* Riduci ulteriormente il padding */
+    }
+    .accordion {
+        font-size: 1rem; /* Riduci la dimensione del testo per il titolo delle FAQ */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .accordion {
+        font-size: 0.9rem; /* Ulteriore riduzione della dimensione del testo */
+        padding: 1rem; /* Riduci il padding interno */
+    }
+
+    .pannel p {
+        font-size: 0.9rem; /* Riduci la dimensione del testo nel pannello */
+    }
+}
+
 .contatti {
-    height: fit-content;
     width: 100%;
     background-color: #788589;
+    padding: 50px 20px; /* Padding per maggiore spazio */
 }
 
 .contatti .title {
     color: #fff;
+    text-align: center;
+    font-size: 32px; /* Dimensione del font più grande per un impatto visivo */
+    margin-bottom: 20px; /* Spazio sotto il titolo */
 }
 
 .container {
-    max-width: 1200px; /* Increased max-width for better spacing */
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 50px 0 100px 0;
-}
-
-.info {
-    padding: 0 50px;
-    flex: 1;
+    gap: 30px; /* Spaziatura tra gli elementi */
 }
 
 .intro-text {
-    font-size: 24px;
+    font-size: 20px; /* Dimensione del font più piccola per una migliore leggibilità */
     color: #fff;
-    margin-bottom: 30px;
-    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 600px; /* Limitiamo la larghezza per migliorare la leggibilità */
 }
 
 .contact-info {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Cambiamo a colonna per schermi più piccoli */
+    width: 100%;
+    gap: 15px; /* Spazio tra gli elementi */
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Sfondo semi-trasparente per gli elementi */
+    padding: 15px;
+    border-radius: 8px; /* Bordo arrotondato */
+    transition: background 0.3s; /* Transizione per effetto hover */
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.2); /* Effetto hover */
 }
 
 .info-item .icon {
-    font-size: 24px;
+    font-size: 24px; /* Dimensione dell'icona */
     color: #fff;
+    margin-right: 15px; /* Spazio tra icona e testo */
 }
 
 .info-item .text {
-    font-size: 18px;
+    font-size: 16px; /* Dimensione del testo */
     color: #fff;
 }
 
-.map iframe {
-    border-radius: 8px;
+/* Stile per la mappa */
+.map {
+    width: 100%;
+    height: 400px; /* Altezza fissa per la mappa */
+    border-radius: 8px; /* Bordo arrotondato */
+    overflow: hidden; /* Assicuriamo che il contenuto non fuoriesca */
 }
+
+.map iframe {
+    width: 100%; /* Mappa responsive */
+    height: 100%; /* Mappa responsive */
+    border: none; /* Rimuoviamo il bordo */
+}
+
+/* Media Queries per migliorare la responsività */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px; /* Riduciamo il padding per schermi più piccoli */
+    }
+
+    .intro-text {
+        font-size: 18px; /* Dimensione del testo ridotta */
+    }
+
+    .info-item {
+        flex-direction: row; /* Manteniamo la direzione a riga per schermi più piccoli */
+        justify-content: flex-start; /* Allineiamo a sinistra */
+    }
+
+    .map {
+        height: 300px; /* Riduciamo l'altezza della mappa */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contatti .title {
+        font-size: 28px; /* Riduciamo la dimensione del titolo */
+    }
+
+    .info-item {
+        flex-direction: column; /* Cambiamo la direzione a colonna */
+        align-items: flex-start; /* Allineiamo a sinistra */
+    }
+
+    .info-item .text {
+        font-size: 14px; /* Riduciamo ulteriormente la dimensione del testo */
+    }
+
+    .map {
+        height: 250px; /* Riduciamo ulteriormente l'altezza della mappa */
+    }
+}
+
+.developer {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #788589;
+}
+
+.developer p {
+    color: #cfcdcd;
+}
+
+.developer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s ease;
+}
+
+.developer a:hover {
+    opacity: 0.7;
+}
+
