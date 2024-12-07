@@ -286,7 +286,7 @@ label.logo a:hover {
     color: #e0e0e0;
     text-align: center;
     font-size: 20px;
-    padding: 50px 0 100px 0;
+    padding: 50px 0 0px 0;
 }
 
 .chisiamo .content p {
@@ -311,7 +311,7 @@ label.logo a:hover {
         font-size: 32px; /* Ulteriore riduzione per schermi più piccoli */
     }
     .chisiamo .content {
-        padding: 30px 20px; /* Riduci il padding per schermi più piccoli */
+        padding: 30px 20px 0px 20px; /* Riduci il padding per schermi più piccoli */
         flex-direction: column; /* Cambia la direzione per un layout verticale */
     }
     .chisiamo .content p {
@@ -343,7 +343,7 @@ label.logo a:hover {
 .servizi .content {
     height: fit-content;
     width: 100%;
-    padding: 35px 0 100px 0;
+    padding: 35px 0 0px 0;
     flex-wrap: wrap;
 }
 
@@ -430,7 +430,7 @@ label.logo a:hover {
 .faqs .content {
     height: fit-content;
     width: 100%;
-    margin: 35px 0 100px 0;
+    margin: 35px 0 0 0;
 }
 
 .wrapper {
@@ -520,7 +520,7 @@ label.logo a:hover {
 .contatti {
     width: 100%;
     background-color: #000;
-    padding: 50px 20px; /* Padding per maggiore spazio */
+    padding: 0 20px 50px 20px; /* Padding per maggiore spazio */
 }
 
 .contatti .title {
