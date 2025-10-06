@@ -1,216 +1,265 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Malt & Hops Pub Bologna</title>
-        <link rel="stylesheet" href="./style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/8d7e2d832c.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-light">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fa-solid fa-bars"></i>
-            </label>
-            <label class="logo">
-                <a href="#home">MALT & HOPS</a>
-            </label>
-            <ul>
-                <li><a href="./menu/menu.html">Men&ugrave;</a></li>
-                <li><a href="./eventi/eventi.html">Eventi</a></li>
-                <li><a href="./shop/shop.html">Shop</a></li>
-                <li><a href="#chisiamo">Chi Siamo</a></li>
-                <li><a href="#contatti">Contatti</a></li>
-            </ul>
-        </nav>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Malt &amp; Hops Pub Bologna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Malt & Hops Pub Bologna: risto-pub in stile Irish, birre artigianali, cocktail, cucina e tanta balotta." />
 
-        <section class="home" id="home">
-            <h1>ED ECCOTI FINALMENTE DOVE LA BIRRA UNISCE E LA BALOTTA REGNA</h1>
-            <a href="/menu/menu.html">Scopri il men&ugrave;</a>
-        </section>
+    <!-- Cache-busting degli asset -->
+    <link rel="stylesheet" href="./style.css?v=20251006" />
 
-        <section class="chisiamo" id="chisiamo">
-            <div class="title">
-                <h1>Benvenuto al Malt&Hops</h1>
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
+    <script defer src="https://kit.fontawesome.com/8d7e2d832c.js" crossorigin="anonymous"></script>
+
+    <!-- Script del sito con cache-busting -->
+    <script defer src="./script.js?v=20251006"></script>
+
+    <!-- Cache-buster SOLO per la homepage (URL "/") -->
+    <script>
+      (function () {
+        try {
+          var isHome =
+            location.pathname === "/" ||
+            location.pathname === "" ||
+            location.pathname.toLowerCase().endsWith("/index.html");
+          var hasVersion = /(?:\?|&)v=/.test(location.search);
+          if (isHome && !hasVersion) {
+            var d = new Date();
+            var v =
+              d.getFullYear().toString() +
+              String(d.getMonth() + 1).padStart(2, "0") +
+              String(d.getDate()).padStart(2, "0") +
+              String(d.getHours()).padStart(2, "0") +
+              String(d.getMinutes()).padStart(2, "0");
+            var sep = location.search ? "&" : "?";
+            var url = location.pathname + location.search + sep + "v=" + v + location.hash;
+            location.replace(url);
+          }
+        } catch (e) {
+          /* non bloccare il rendering in caso di errore */
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-light">
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+      <label class="logo">
+        <a href="#home">MALT &amp; HOPS</a>
+      </label>
+      <ul>
+        <li><a href="./menu/menu.html">Men&ugrave;</a></li>
+        <li><a href="./eventi/eventi.html">Eventi</a></li>
+        <li><a href="./shop/shop.html">Shop</a></li>
+        <li><a href="#chisiamo">Chi Siamo</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+
+    <section class="home" id="home">
+      <h1>ED ECCOTI FINALMENTE DOVE LA BIRRA UNISCE E LA BALOTTA REGNA</h1>
+      <a href="/menu/menu.html">Scopri il men&ugrave;</a>
+    </section>
+
+    <section class="chisiamo" id="chisiamo">
+      <div class="title">
+        <h1>Benvenuto al Malt&amp;Hops</h1>
+      </div>
+      <div class="content">
+        <p>
+          Nel nostro risto-pub, la tradizione irlandese incontra il calore bolognese. Un luogo dove il buon cibo, le birre artigianali e l'atmosfera accogliente si uniscono per regalarti momenti indimenticabili.
+          Che tu stia cercando una serata con gli amici, un evento speciale o semplicemente un angolo dove rilassarti con una pinta e un sorriso, qui sei a casa. La nostra cucina propone piatti gustosi preparati con ingredienti freschi, perfetti per accompagnare una selezione di birre e drink scelti con cura.
+          Il nostro pub &egrave; il punto d'incontro per chi ama la compagnia, le risate e fare balotta.
+        </p>
+      </div>
+    </section>
+
+    <section class="servizi" id="servizi">
+      <div class="title">
+        <h1>Servizi</h1>
+      </div>
+      <div class="content">
+        <div class="s" id="servizio1">
+          <div class="immagineS"></div>
+          <div class="titoloS">
+            <h2>SHOP</h2>
+          </div>
+          <div class="testoS">
+            <p>
+              Porta a casa l'atmosfera del nostro pub con il nostro merchandising esclusivo: t-shirt, cappellini e gadget che raccontano la nostra storia. Scopri la collezione e mostra il tuo stile unico!
+            </p>
+          </div>
+          <div class="ctaS">
+            <a href="./shop/shop.html">Scopri di pi&ugrave;</a>
+          </div>
+        </div>
+
+        <div class="s" id="servizio2">
+          <div class="immagineS"></div>
+          <div class="titoloS">
+            <h2>MEN&Ugrave;</h2>
+          </div>
+          <div class="testoS">
+            <p>
+              Scopri il piacere di birre artigianali, cocktail unici e piatti preparati con passione: un invito a lasciarsi tentare.
+            </p>
+          </div>
+          <div class="ctaS">
+            <a href="./menu/menu.html">Scopri di pi&ugrave;</a>
+          </div>
+        </div>
+
+        <div class="s" id="servizio3">
+          <div class="immagineS"></div>
+          <div class="titoloS">
+            <h2>EVENTI</h2>
+          </div>
+          <div class="testoS">
+            <p>
+              Ogni mese, proponiamo eventi che uniscono buona musica, serate karaoke e Cervellone, creando l'atmosfera perfetta per divertirsi in compagnia. Consulta il nostro calendario per non perdere il prossimo appuntamento!
+            </p>
+          </div>
+          <div class="ctaS">
+            <a href="./eventi/eventi.html">Scopri di pi&ugrave;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faqs" id="faqs">
+      <div class="title">
+        <h1>FAQs</h1>
+      </div>
+      <div class="content">
+        <div class="wrapper">
+          <div class="faq">
+            <button class="accordion">
+              Quali sono gli orari di apertura?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+              <p>
+                <br />
+                LUN-GIO: 18:30-01:00<br />
+                VEN-SAB: 18:30-02:00<br />
+                Domenica Relax
+              </p>
             </div>
-            <div class="content">
-                <p>
-                Nel nostro risto-pub, la tradizione irlandese incontra il calore bolognese. Un luogo dove il buon cibo, le birre artigianali e l'atmosfera accogliente si uniscono per regalarti momenti indimenticabili.
+          </div>
 
-		Che tu stia cercando una serata con gli amici, un evento speciale o semplicemente un angolo dove rilassarti con una pinta e un sorriso, qui sei a casa. La nostra cucina propone piatti gustosi preparati con ingredienti freschi, perfetti per accompagnare una selezione di birre e drink scelti con cura.
-
-		Il nostro pub &egrave; il punto d'incontro per chi ama la compagnia, le risate e fare balotte.
-                </p>
+          <div class="faq">
+            <button class="accordion">
+              Accettate prenotazioni?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+              <p>
+                Certo! Chiamaci al 051 049 2408 oppure scrivici in DM sulla nostra pagina
+                <a href="https://www.instagram.com/malt_and_hops_pub_bologna/" target="_blank" rel="noopener">Instagram</a>.
+              </p>
             </div>
-        </section>
+          </div>
 
-        <section class="servizi" id="servizi">
-            <div class="title">
-                <h1>Servizi</h1>
+          <div class="faq">
+            <button class="accordion">
+              Organizzate eventi privati?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="pannel">
+              <p>
+                S&igrave;, organizziamo eventi privati! Compleanni, feste di laurea, cene aziendali e tanto altro:
+                contattaci per creare l&apos;evento su misura per te.
+              </p>
             </div>
-           <div class="content">
-                <div class="s" id="servizio1">
-                    <div class="immagineS"></div>
-                    <div class="titoloS">
-                        <h2>SHOP</h2>
-                    </div>
-                    <div class="testoS">
-                        <p>Porta a casa l'atmosfera del nostro pub con il nostro merchandising esclusivo: t-shirt, cappellini e gadget che raccontano la nostra storia. Scopri la collezione e mostra il tuo stile unico!</p>
-                    </div>
-                    <div class="ctaS">
-                        <a href="./shop/shop.html">Scopri di pi&ugrave;</a>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="s" id="servizio2">
-                    <div class="immagineS"></div>
-                    <div class="titoloS">
-                        <h2>MEN&Ugrave;</h2>
-                    </div>
-                    <div class="testoS">
-                        <p>Scopri il piacere di birre artigianali, cocktail unici e piatti preparati con passione: un invito a lasciarsi tentare.</p>
-                    </div>
-                    <div class="ctaS">
-                        <a href="./menu/menu.html">Scopri di pi&ugrave;</a>
-                    </div>
-                </div>
-
-                <div class="s" id="servizio3">
-                    <div class="immagineS"></div>
-                    <div class="titoloS">
-                        <h2>EVENTI</h2>
-                    </div>
-                    <div class="testoS">
-                        <p>Ogni mese, proponiamo eventi che uniscono buona musica, serate karaoke e Cervellone, creando l'atmosfera perfetta per divertirsi in compagnia. Consulta il nostro calendario per non perdere il prossimo appuntamento!</p>
-                    </div>
-                    <div class="ctaS">
-                        <a href="./eventi/eventi.html">Scopri di pi&ugrave;</a>
-                    </div>
-                </div>
+    <section class="contatti" id="contatti">
+      <div class="title">
+        <h1>Contatti</h1>
+      </div>
+      <div class="container">
+        <div class="info">
+          <p class="intro-text">
+            Contattaci per prenotazioni o domande, siamo qui per aiutarti!
+          </p>
+          <div class="contact-info">
+            <div class="info-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">Via Emilia Levante 137/7, (BO)</span>
             </div>
-        </section>
-
-        <section class="faqs" id="faqs">
-            <div class="title">
-                <h1>FAQs</h1>
+            <div class="info-item">
+              <span class="icon"><i class="fas fa-file-invoice"></i></span>
+              <span class="text">P.IVA: 04107770374</span>
             </div>
-            <div class="content">
-              <div class="wrapper">
-                <div class="faq">
-                  <button class="accordion">
-                    Quali sono gli orari di apertura?
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                  <div class="pannel">
-                    <p>
-                      <br>
-			    LUN-GIO: 18:30-01:00<br>
-			    VEN-SAB: 18:30-02:00<br>
-			    Domenica Relax
-                    </p>
-                  </div>
-                </div>
-          
-                <div class="faq">
-                  <button class="accordion">
-                    Accettate prenotazioni?
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                  <div class="pannel">
-                    <p>
-                      Certo! chiamaci al 051 049 2408 oppore in DM sulla nostra pagina <a href="https://www.instagram.com/malt_and_hops_pub_bologna/" target="_blank">Instagram</a>
-                  </div>
-                </div>
-          
-                <div class="faq">
-                  <button class="accordion">
-                    Organizzate eventi privati?
-                    <i class="fa-solid fa-chevron-down"></i>
-                  </button>
-                  <div class="pannel">
-                    <p>
-		S&igrave;, organizziamo eventi privati!
-		Compleanni, feste di laurea, cene aziendali e tanto altro: contattaci per creare l&apos;evento su misura per te.
-                    </p>
-                  </div>
-              </div>
+            <div class="info-item">
+              <span class="icon"><i class="fas fa-phone"></i></span>
+              <span class="text">051 049 2408</span>
             </div>
-        </section>
-
-        <section class="contatti" id="contatti">
-            <div class="title">
-                <h1>Contatti</h1>
+            <div class="info-item">
+              <a href="https://www.facebook.com/MaltAndHops.Bologna/" target="_blank" rel="noopener">
+                <span class="icon"><i class="fa-brands fa-facebook"></i></span>
+                <span class="text">Facebook</span>
+              </a>
             </div>
-            <div class="container">
-                <div class="info">
-                    <p class="intro-text">
-                        Contattaci per prenotazioni o domande, siamo qui per aiutarti!
-                    </p>
-                    <div class="contact-info">
-                        <div class="info-item">
-                            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-                            <span class="text">Via Emilia Levante 137/7, (BO)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="icon"><i class="fas fa-file-invoice"></i></span>
-                            <span class="text">P.IVA: 04107770374</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="icon"><i class="fas fa-phone"></i></span>
-                            <span class="text">051 049 2408</span>
-                        </div>
-						<div class="info-item">
-                            <a href="https://www.facebook.com/MaltAndHops.Bologna/" target="_blank">
-                                <span class="icon"><i class="fa-brands fa-facebook"></i></span>
-                                <span class="text">Facebook</span>
-                            </a>
-                        </div>
-                        <div class="info-item">
-                            <a href="https://www.instagram.com/malt_and_hops_pub_bologna/" target="_blank">
-                                <span class="icon"><i class="fa-brands fa-instagram"></i></span>
-                                <span class="text">Instagram</span>
-                            </a>
-                        </div>
-                        <div class="info-item">
-                            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                            <span class="text">maltandhops@gmail.com</span>
-                        </div>
-                    </div>
-                </div> 
-				<div class="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5693.578414311283!2d11.384631477548933!3d44.478493371074784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477e2b17cf704f4f%3A0xcaa7a3d342983505!2sMalt%26Hops%20Pub%20Bologna!5e0!3m2!1sit!2sit!4v1727968628260!5m2!1sit!2sit" width="550" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
+            <div class="info-item">
+              <a href="https://www.instagram.com/malt_and_hops_pub_bologna/" target="_blank" rel="noopener">
+                <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+                <span class="text">Instagram</span>
+              </a>
             </div>
-        </section>
+            <div class="info-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text">maltandhops@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5693.578414311283!2d11.384631477548933!3d44.478493371074784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477e2b17cf704f4f%3A0xcaa7a3d342983505!2sMalt%26Hops%20Pub%20Bologna!5e0!3m2!1sit!2sit!4v1727968628260!5m2!1sit!2sit"
+            width="550"
+            height="300"
+            style="border:0"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
 
-        <section class="developer">
-            <p>Developed by <a href="https://www.instagram.com/wdm.corp/" target="_blank">WDM</a></p>
-        </section>
+    <section class="developer">
+      <p>
+        Developed by
+        <a href="https://www.instagram.com/wdm.corp/" target="_blank" rel="noopener">WDM</a>
+      </p>
+    </section>
 
-        <script src="./script.js"></script>
-        <script>
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-      
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                this.parentElement.classList.toggle("active");
-      
-                var pannel = this.nextElementSibling;
-      
-                if (pannel.style.display === "block") {
-                  pannel.style.display = "none";
-                } else {
-                  pannel.style.display = "block";
-                }
-              });
+    <!-- Script FAQ (lasciato inline per compatibilità) -->
+    <script>
+      (function () {
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            this.parentElement.classList.toggle("active");
+            var pannel = this.nextElementSibling;
+            if (pannel.style.display === "block") {
+              pannel.style.display = "none";
+            } else {
+              pannel.style.display = "block";
             }
-          </script>
-    </body>
-
+          });
+        }
+      })();
+    </script>
+  </body>
 </html>
-
-
-
-
