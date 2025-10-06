@@ -1,0 +1,14 @@
+# Nessuna cache per la pagina dei menù
+<IfModule mod_headers.c>
+  <Files "menu.html">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </Files>
+</IfModule>
+
+# Il PDF può restare in cache, ma useremo il versioning (?v=) per forzare gli update
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/pdf "access plus 30 days"
+</IfModule>
