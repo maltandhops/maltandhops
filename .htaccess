@@ -1,27 +1,25 @@
-# Forza l'homepage su index.html
+# Homepage sempre aggiornata
 DirectoryIndex index.html
 
-# Disattiva cache per tutte le pagine HTML (in particolare index.html)
 <IfModule mod_headers.c>
-  <FilesMatch "\.(html?)$">
+  # Niente cache per la sola homepage
+  <Files "index.html">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
     Header set Expires "0"
-  </FilesMatch>
-  Header unset ETag
+  </Files>
 </IfModule>
-FileETag None
 
-# Cache più lunga per asset statici (CSS, JS, immagini)
+# Cache "buona" per asset (CSS/JS/immagini/PDF) — il bust la gestiamo con ?v=
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 30 days"
   ExpiresByType application/javascript "access plus 30 days"
-  ExpiresByType application/x-javascript "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/jpg "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType application/pdf "access plus 30 days"
   ExpiresDefault "access plus 7 days"
 </IfModule>
